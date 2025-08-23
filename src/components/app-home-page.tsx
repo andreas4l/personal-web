@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export function AppHomePage() {
   return (
-    <div className="flex flex-col  items-center justify-between h-screen md:flex-row" id="home">
+    <div className="flex flex-col  items-center justify-between h-screen md:flex-row pt-30" id="home">
       <div className="w-full flex flex-col gap-6 md:w-1/2 md:gap-8">
         <p className="text-muted-foreground text-3xl">{"Hello, I'm"}</p>
         <p className="font-bold text-6xl bg-gradient-to-r from-[#0938FE] to-[#9078FF] bg-clip-text text-transparent">
