@@ -25,14 +25,14 @@ export function AppNavbar() {
   }, []);
 
   return (
-    <nav className="relative py-4">
+    <nav className="top-0 left-0 w-full z-50 fixed py-4 bg-white shadow">
       {/* Desktop & mobile container */}
-      <div className="flex items-center justify-between">
+      <div className="container mx-auto flex items-center justify-between">
         {/* Logo */}
         <Image
           src="/codebert.svg"
           alt="CODEBERT"
-          width={250}
+          width={200}
           height={100}
           className="cursor-pointer hidden md:block"
         />
@@ -61,8 +61,8 @@ export function AppNavbar() {
             <Image
               src="/codebert.svg"
               alt="CODEBERT"
-              width={188}
-              height={75}
+              width={150}
+              height={60}
               className="cursor-pointer md:hidden"
             />
             <SearchInput />
