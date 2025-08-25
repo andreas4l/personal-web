@@ -6,8 +6,8 @@ export function AppHomePage() {
   return (
     <div className="flex flex-col  items-center justify-between h-screen md:flex-row pt-30" id="home">
       <div className="w-full flex flex-col gap-6 md:w-1/2 md:gap-8">
-        <p className="text-muted-foreground text-3xl">{"Hello, I'm"}</p>
-        <p className="font-bold text-6xl bg-gradient-to-r from-[#0938FE] to-[#9078FF] bg-clip-text text-transparent">
+        <p className="text-muted-foreground text-2xl md:text-3xl">{"Hello, I'm"}</p>
+        <p className="font-bold text-4xl md:text-6xl bg-gradient-to-r from-[#0938FE] to-[#9078FF] bg-clip-text text-transparent">
           Andreas Alberto
         </p>
         <Image
@@ -17,10 +17,10 @@ export function AppHomePage() {
           height={300}
           className="scale-x-[-1] rounded-xl md:hidden w-full"
         />
-        <p className="text-4xl font-bold">
+        <p className="text-2xl md:text-4xl font-bold">
           Computer Science Student & Web Development Enthusiast
         </p>
-        <p className="text-2xl">
+        <p className="text-1xl md:text-2xl">
           I am currently studying web development and building small projects to
           improve my skills. I am very enthusiastic about technology and always
           eager to explore new challenges.
@@ -32,7 +32,7 @@ export function AppHomePage() {
             </Button>
           </Link>
           <Link href="#contact">
-            <Button className="font-bold text-xl text-[#0938FE] p-6 border-3 border-[#0938FE] bg-transparent hover:bg-transparent cursor-pointer">
+            <Button className="font-bold text-xl text-[#0938FE] dark:text-[#9078FF] p-6 border-3 md:border-[#0938FE] dark:border-[#9078FF] bg-transparent hover:bg-transparent cursor-pointer">
               Contact
             </Button>
           </Link>

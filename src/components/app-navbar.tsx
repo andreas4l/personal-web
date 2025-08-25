@@ -4,6 +4,8 @@ import Image from "next/image";
 import { SearchInput } from "./app-search";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
+import { ModeToggle } from "./mode-toggle";
+import Link from "next/link";
 
 export function AppNavbar() {
   const [open, setOpen] = useState(false);
@@ -25,47 +27,53 @@ export function AppNavbar() {
   }, []);
 
   return (
-    <nav className="top-0 left-0 w-full z-50 fixed py-4 bg-white shadow">
+    <nav className="top-0 left-0 w-full z-50 fixed py-4 bg-white dark:bg-black drop-shadow-[0_0.5px_1px_grey] dark:drop-shadow-[0_0.5px_1px_white]">
       {/* Desktop & mobile container */}
-      <div className="container mx-auto flex items-center justify-between">
-        {/* Logo */}
-        <Image
-          src="/codebert.svg"
-          alt="CODEBERT"
-          width={200}
-          height={100}
-          className="cursor-pointer hidden md:block"
-        />
+      <div className="container mx-auto flex items-center justify-between gap-4">
+        <Link href={"#home"}>
+          {/* Logo */}
+          <Image
+            src="/codebert.svg"
+            alt="CODEBERT"
+            width={200}
+            height={100}
+            className="cursor-pointer hidden md:block"
+          />
+        </Link>
         {/* Desktop menu */}
         {!isMobile && (
           <ul className="flex-1 hidden md:flex gap-14 font-bold items-center justify-center">
-            <li className="hover:bg-[#0938FE] px-2 py-2 hover:text-white rounded-md">
+            <li className="hover:bg-[#0938FE] px-2 py-2 hover:text-white rounded-md transition-all delay-150 duration-300 ease-in-out">
               <a href="#home">Home</a>
             </li>
-            <li className="hover:bg-[#0938FE] px-2 py-2 hover:text-white rounded-md">
+            <li className="hover:bg-[#0938FE] px-2 py-2 hover:text-white rounded-md transition-all delay-150 duration-300 ease-in-out">
               <a href="#about">About</a>
             </li>
-            <li className="hover:bg-[#0938FE] px-2 py-2 hover:text-white rounded-md">
+            <li className="hover:bg-[#0938FE] px-2 py-2 hover:text-white rounded-md transition-all delay-150 duration-300 ease-in-out">
               <a href="#projrct">Project</a>
             </li>
-            <li className="hover:bg-[#0938FE] px-2 py-2 hover:text-white rounded-md">
+            <li className="hover:bg-[#0938FE] px-2 py-2 hover:text-white rounded-md transition-all delay-150 duration-300 ease-in-out">
               <a href="#contact">Contact</a>
             </li>
           </ul>
         )}
         {/* Desktop search */}
         {!isMobile && <SearchInput />}
+        {!isMobile && <ModeToggle />}
         {/* Mobile center search */}
         {isMobile && (
           <div className="flex-1 flex justify-between items-center gap-4">
-            <Image
-              src="/codebert.svg"
-              alt="CODEBERT"
-              width={150}
-              height={60}
-              className="cursor-pointer md:hidden"
-            />
+            <Link href={"#home"}>
+              <Image
+                src="/codebert.svg"
+                alt="CODEBERT"
+                width={250}
+                height={60}
+                className="cursor-pointer md:hidden"
+              />
+            </Link>
             <SearchInput />
+            <ModeToggle />
             <button
               onClick={() => setOpen(!open)}
               className="md:hidden p-2 rounded-md hover:bg-gray-100"
@@ -78,7 +86,7 @@ export function AppNavbar() {
 
       {/* Menu mobile */}
       {open && (
-        <div className="absolute top-full w-full bg-white shadow-md flex flex-col p-6 gap-6 text-lg font-bold animate-slideDown items-center">
+        <div className="absolute top-full w-full bg-white dark:bg-black shadow-md flex flex-col p-6 gap-6 text-lg font-bold animate-slideDown items-center">
           <a
             href="#home"
             onClick={() => setOpen(false)}
